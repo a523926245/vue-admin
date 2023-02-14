@@ -4,9 +4,17 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  getters: {},
+  state: {
+    editList: null,
+  },
+  getters: {
+    editList: (state) => state.editList,
+  },
   mutations: {},
-  actions: {},
+  actions: {
+    storeEditLists({ state }, payload) {
+      state.editList = payload;
+    },
+  },
   modules: {},
 });
